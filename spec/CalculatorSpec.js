@@ -5,7 +5,7 @@ describe("Calculator", () => {
   describe('First scenerio', ()=>{
     let currentAge = 25;
     let desiredRetirementAge = 65;
-    let currentYear = 2015;
+    let currentYear = 2025;
 
     it('calculate working years left of 40', () =>{
       const calculator = new Calculator(currentAge, desiredRetirementAge, currentYear)
@@ -16,14 +16,14 @@ describe("Calculator", () => {
    it('calculate the year of retirement', () =>{
       const calculator = new Calculator(currentAge, desiredRetirementAge, currentYear)
       const retirementYear = calculator.retirementYear(calculator.workingYearsLeft(currentAge, desiredRetirementAge))
-      expect(retirementYear).toEqual(2055)
+      expect(retirementYear).toEqual(2065)
     });
   })
 
   describe('second scenerio', ()=>{
     let currentAge = 15;
     let desiredRetirementAge = 65;
-    let currentYear = 2010;
+    let currentYear = 2030;
 
     it('calculate working years left of 50', () =>{
       const calculator = new Calculator(currentAge, desiredRetirementAge, currentYear)
@@ -34,7 +34,7 @@ describe("Calculator", () => {
    it('calculate the year of retirement', () =>{
       const calculator = new Calculator(currentAge, desiredRetirementAge, currentYear)
       const retirementYear = calculator.retirementYear(calculator.workingYearsLeft(currentAge, desiredRetirementAge))
-      expect(retirementYear).toEqual(2060)
+      expect(retirementYear).toEqual(2080)
     });
   })
 
@@ -54,5 +54,16 @@ describe("Calculator", () => {
     expect(retirementYear).toEqual(2020)
   });
   })
+
+  describe('exceptions', () => {
+    it('throw error if working years left is exceeded', () =>{
+      expect(() => { new Calculator(70, 65, 2020) }).toThrow()
+    });
+
+    it('throw error is current years is exceeded', () =>{
+      expect(() => { new Calculator(60, 65, 2010) }).toThrow()
+    });
+  })
+  
   
 })
