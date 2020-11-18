@@ -69,6 +69,12 @@ describe("Calculator", () => {
     it('throw error if current age is not a number', () =>{
       expect(() => { new Calculator('twenty', 65, 2020) }).toThrow()
     });
+    it('throw error if desiredRetirementAge is not a number', () =>{
+      expect(() => { new Calculator(20, '65', 2020) }).toThrow()
+    });
+    it('throw error if currentYear is not a number', () =>{
+      expect(() => { new Calculator(20, 65, '2020') }).toThrow()
+    });
 
     it('throw error is current input are current age and desiredRetirementAge are not whole numbers', () =>{
       expect(() => { new Calculator(60.5, 65.5, 2010) }).toThrow()
