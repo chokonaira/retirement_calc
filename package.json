@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx jasmine spec/CalculatorSpec.js"
+    "test": "npx jasmine-ts spec/CalculatorSpec.ts"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +13,12 @@
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "@babel/register": "^7.12.1",
-    "jasmine": "^3.6.3"
+    "@types/jasmine": "^3.6.1",
+    "jasmine": "^3.6.3",
+    "jasmine-spec-reporter": "^6.0.0",
+    "jasmine-ts": "^0.3.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.5"
   },
   "dependencies": {}
 }
